@@ -19,7 +19,7 @@ var csvtool = require('./csvJSON');
 var fs = require('fs');
 var textByLine = fs.readFileSync(CSVFileName).toString();
 
-// Parsing csv file. result receiv the JSON object
+// Parsing csv file. result receiv the JSON object 
 var result = [];
 result = csvtool.csvJSON(textByLine);
 
