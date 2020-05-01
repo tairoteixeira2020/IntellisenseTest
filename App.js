@@ -6,11 +6,15 @@
     the parsed time and the mac is the tag name.
 */
 
+var myArgs = process.argv.slice(2);
+
 
 // CVS file name to be parsed
-var CSVFileName = "2020-02-09T16.00.00-testfile3.csv";
+// var CSVFileName = "2020-02-09T16.00.00-testfile3.csv";
+var CSVFileName = myArgs[0];
 // JSON file name to be created
-var JSONFileName = "2020-02-09T16.00.00-testfile3.json";
+// var JSONFileName = "2020-02-09T16.00.00-testfile3.json";
+var JSONFileName = myArgs[1];
 
 // Importing csvJSON function to parse csv file
 var csvtool = require('./csvJSON');
@@ -30,9 +34,9 @@ const jsonString = JSON.stringify(result)
 // Write JSON file
 fs.writeFile('./'+JSONFileName, jsonString, err => {
     if (err) {
-        console.log('Error writing file', err)
+        console.log('Error writing JSON file', err)
     } else {
-        console.log('Successfully wrote file')
+        console.log('Successfully wrote JSON file')
     }
 })
 
